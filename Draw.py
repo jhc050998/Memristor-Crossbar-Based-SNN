@@ -1,5 +1,6 @@
 import itertools
 
+import math
 import numpy
 import torch
 
@@ -191,7 +192,7 @@ def main():
 
     # MNIST_conMx()
 
-    # 准备数据
+    '''# 准备数据
     categories = ['BinaryConnect', 'BinaryNet', 'Gated-XNOR', 'HDSNN']
     values = [17.32, 13.12, 11.89, 8.19]
     # colors = ['red', 'blue', 'green', 'yellow']
@@ -200,6 +201,22 @@ def main():
 
     # 创建柱状图
     plt.bar(categories, values, width=0.45, color=colors)  # , color=colors
+    plt.show()'''
+
+    n1 = math.log(5.571e-3, 10)
+    n2 = math.log(1.327e-4, 10)
+    n3 = math.log(5.0e-7, 10)
+
+    n1_d, n2_d, n3_d = n1 + 8, n2 + 8, n3 + 8
+    print(n1)
+    print(n2)
+    print(n3)
+
+    categories = ['CPU', 'GPU', 'Memristor Crossbar']
+    values = [n1_d, n2_d, n3_d]
+    colors = [(0.2, 0.4, 0.6), (0.2, 0.4, 0.6), 'orange']
+
+    plt.bar(categories, values, width=0.45, color=colors)
     plt.show()
 
 
